@@ -7,7 +7,15 @@
   <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
   <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
-  <application ...>
+  <!-- تأكد من وجود applicationName هنا إذا كان لديك كلاس مخصص، أو اتركه بدون android:name -->
+  <application 
+      android:name="${applicationName}" 
+      android:label="Noor Habits" 
+      android:icon="@mipmap/ic_launcher"> 
+      
+    <!-- 👇 هذا هو السطر الأهم الذي كان مفقوداً 👇 -->
+    <meta-data android:name="flutterEmbedding" android:value="2" />
+
     <service android:name="dev.fluttercommunity.plus.androidalarmmanager.AlarmService"
         android:permission="android.permission.BIND_JOB_SERVICE"
         android:exported="false"/>
